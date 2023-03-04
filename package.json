@@ -1,9 +1,10 @@
 {
   "name": "my-nric",
   "description": "Malaysia NRIC validation and formatter",
-  "version": "1.0.3",
+  "version": "1.0.4",
   "author": "Deojeff Lai",
   "main": "lib/src/index.js",
+  "types": "lib/src/index.d.ts",
   "scripts": {
     "prepublish": "tsc",
     "build": "tsc",
@@ -20,7 +21,6 @@
     "identity card",
     "Malaysia"
   ],
-  "types": "lib/src/index.d.ts",
   "license": "MIT",
   "private": false,
   "devDependencies": {

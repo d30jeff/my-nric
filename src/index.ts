@@ -1,6 +1,6 @@
-import { dayjs } from '../src/utils/dayjs.util';
-import { stateCodes } from '../src/utils/state-codes.util';
-import { ConfigOptions, NRIC } from '../src/interface/index.interface';
+import { ConfigOptions, NRIC } from './interface/index.interface';
+import { dayjs } from './utils/dayjs.util';
+import { stateCodes } from './utils/state-codes.util';
 
 const PATTERN = /^[0-9]{6}[-]*[0-9]{2}[-]*[0-9]{4}$/i;
 export const nric = (

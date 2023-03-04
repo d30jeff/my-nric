@@ -58,14 +58,22 @@ export const nric = (
     formattedNRIC = [partialBirthDate, stateCode, serialNumber].join('-');
   }
 
+  let dateOfBirth = dayjs(birthDate).subtract(dayjs(birthDate).isAfter(dayjs()) ? 100 : 0, 'year');
+
+  if (dateOfBirth.isAfter(dayjs())) {
+    dateOfBirth.subtract(100, 'year');
+  }
+
+  let currentAge = dayjs().diff(dateOfBirth, 'year', partialAge);
+
   return {
     error: null,
     data: {
       formatted: formattedNRIC,
-      dateOfBirth: dayjs(birthDate).toDate(),
+      dateOfBirth: dateOfBirth.toDate(),
       gender: Number(lastNRICDigit) % 2 === 0 ? 'Female' : 'Male',
       placeOfBirth: state,
-      currentAge: dayjs().diff(birthDate, 'year', partialAge),
+      currentAge,
     },
     isValid: true,
   };

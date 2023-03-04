@@ -13,6 +13,9 @@
   },
   "keywords": [
     "nric",
+    "validation",
+    "my-nric",
+    "identity card",
     "Malaysia"
   ],
   "types": "lib/src/index.d.ts",

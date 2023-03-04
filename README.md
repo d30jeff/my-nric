@@ -86,11 +86,11 @@ const result = nric('950821-99-1234');
 
 Valid NRIC Numbers would have these following properties:
 
-- `formatted`: A formatted;
-  dateOfBirth: Date;
-  placeOfBirth: string;
-  currentAge: string;
-  gender: 'Male' | 'Female';
+- `formatted` (String): A formatted nric based on given option
+- `dateOfBirth` (Date): Date of birth;
+- `placeOfBirth` (String): Place of Birth;
+- `currentAge` (Number): Current age;
+- `gender` (String): Gender ('Male' | 'Female')
 
 ### NRIC Object
 

@@ -1,8 +1,1 @@
 node_modules
-*
-.eslintrc
-.prettierrc
-lib/test
-jest.config.json
-tsconfig.json
-.vscode

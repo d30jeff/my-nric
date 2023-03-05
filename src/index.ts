@@ -46,7 +46,7 @@ export const nric = (
 
   if (!state) {
     return {
-      error: 'Invalid State Code',
+      error: 'Invalid Place Of Birth Code',
       data: {},
       isValid: false,
     };

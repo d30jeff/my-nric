@@ -105,3 +105,36 @@ Returns an object that contains these properties:
   error: string | null;
   data: Data | {};
 ```
+
+### Test Suite
+
+```
+ PASS  src/test/index.test.ts (170 MB heap size)
+  General Format
+    ✓ Accept 14 Characters (4 ms)
+    ✓ Accept 12 Characters (1 ms)
+    ✓ Throws Error When 14 Characters of Alphabets (1 ms)
+    ✓ Throws Error When 14 Characters of Symbols (1 ms)
+    ✓ Throws Error When 12 Characters of Alphabets (2 ms)
+    ✓ Throws Error When 12 Characters of Symbols
+  Validate Date Of Birth Format
+    ✓ On Dash Format, Returns Error When Month Is Invalid (10 ms)
+    ✓ On Non-Dash Format, Returns Error When Month Is Invalid (9 ms)
+    ✓ On Dash Format, Returns Error When Day Is Invalid (64 ms)
+    ✓ On Non-Dash Format, Returns Error When Day Is Invalid (13 ms)
+  Validate Place Of Birth Format
+    ✓ On Dash Format, Throw Errors When Place Of Birth Code Is Invalid (1 ms)
+    ✓ On Non-Dash Format, Throw Errors When Place Of Birth Code Is Invalid
+    ✓ On Dash Format, Returns Correct Place Of Birth (17 ms)
+    ✓ On Non-Dash Format, Returns Correct Place Of Birth (15 ms)
+  Returns Correct Gender
+    ✓ On Dash Format, Returns Correct Gender (4 ms)
+    ✓ On Non-Dash Format, Returns Correct Gender (4 ms)
+
+Test Suites: 1 passed, 1 total
+Tests:       16 passed, 16 total
+Snapshots:   0 total
+Time:        0.943 s, estimated 1 s
+Ran all test suites.
+✨  Done in 1.57s.
+```

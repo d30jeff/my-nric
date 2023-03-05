@@ -6,11 +6,11 @@
   "main": "lib/index.js",
   "types": "lib/index.d.ts",
   "files": [
-    "lib/**/*",
-    "!lib/test/**/*"
+    "lib"
   ],
   "scripts": {
     "prepublish": "tsc",
+    "prepare": "yarn build",
     "prepublishOnly": "yarn test",
     "build": "tsc",
     "dev": "yarn build && node ./lib/dev/index.js",

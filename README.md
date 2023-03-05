@@ -1,10 +1,12 @@
-### Validation and Formatter for Malaysian NRIC
+# Validation and Formatter for Malaysian NRIC
 
-### Installation
+Malaysian NRIC (Kad Pengenalan) validation and formatter library
+
+# Installation
 
 `yarn add my-nric` or `npm i my-nric`
 
-### Usage
+# Usage
 
 ```
 import { nric } from 'my-nric';
@@ -26,6 +28,22 @@ const result = nric('950721-12-1234', { includeDash: true, });
   error: null,
   data: {
     formatted: '950721-12-1234',
+    dateOfBirth: 1995-07-20T16:00:00.000Z,
+    gender: 'Female',
+    placeOfBirth: 'Sabah',
+    currentAge: 27
+  },
+  isValid: true
+},
+```
+
+```
+const result = nric('950721-12-1234', { includeDash: false, });
+
+{
+  error: null,
+  data: {
+    formatted: '950721121234',
     dateOfBirth: 1995-07-20T16:00:00.000Z,
     gender: 'Female',
     placeOfBirth: 'Sabah',
@@ -58,7 +76,26 @@ const result = nric('950721-12-1234',{
 },
 ```
 
-### Error Example
+```
+const result = nric('950721-12-1234',{
+  includeDash: true,
+  partialAge: false,
+});
+
+{
+  error: null,
+  data: {
+    formatted: '950721-12-1234',
+    dateOfBirth: 1995-07-20T16:00:00.000Z,
+    gender: 'Female',
+    placeOfBirth: 'Sabah',
+    currentAge: 27
+  },
+  isValid: true
+},
+```
+
+# Error Example
 
 **Invalid Birth Date**
 
@@ -69,36 +106,36 @@ const result = nric('959921-12-1234');
 { error: 'Invalid Birth Date', data: {}, isValid: false },
 ```
 
-**Invalid State Code**
+**Invalid Place Of Birth Code**
 
 ```
 const result = nric('950821-99-1234');
 
 // Output:
 {
-  error: 'Invalid State Code',
+  error: 'Invalid Place Of Birth Code',
   data: {},
   isValid: false
 }
 ```
 
-### Data Object
+# Data Object
 
-Valid NRIC Numbers would have these following properties:
+When a given NRIC number passes the validation, it returns the object below in the `data` property
 
 - `formatted` (String): A formatted nric based on given option
-- `dateOfBirth` (Date): Date of birth;
-- `placeOfBirth` (String): Place of Birth;
-- `currentAge` (Number): Current age;
-- `gender` (String): Gender ('Male' | 'Female')
+- `dateOfBirth` (Date): Date of birth
+- `placeOfBirth` (String): Place of Birth
+- `currentAge` (Number): Current age
+- `gender` (String): Gender `'Male' | 'Female'`
 
-### NRIC Object
+# NRIC Object
 
 Returns an object that contains these properties:
 
-- `isValid (boolean)` Wether the NRIC Number is valid
-- `error (string | null)`
-- `data (Data | {})`
+- `isValid (boolean)` Whether the NRIC is valid
+- `error (string | null)` The error object when NRIC is invalid
+- `data (Data | {})` The extractable information based on the NRIC.
 
 ```
   isValid: boolean;
@@ -106,7 +143,7 @@ Returns an object that contains these properties:
   data: Data | {};
 ```
 
-### Test Suite
+# Test Suite
 
 ```
  PASS  src/test/index.test.ts (170 MB heap size)

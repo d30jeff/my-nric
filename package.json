@@ -1,12 +1,13 @@
 {
   "name": "my-nric",
   "description": "Malaysia NRIC validation and formatter",
-  "version": "2.0.0",
+  "version": "2.0.1",
   "author": "Deojeff Lai",
   "main": "lib/src/index.js",
   "types": "lib/src/index.d.ts",
   "files": [
-    "lib/**/*"
+    "lib/src/index.js",
+    "lib/src/index.d.ts"
   ],
   "scripts": {
     "prepublish": "tsc",

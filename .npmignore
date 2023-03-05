@@ -1,4 +1,4 @@
 node_modules
 lib/dev
-lib/test
+lib/test/**
 lib/src/interface

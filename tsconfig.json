@@ -3,6 +3,7 @@
     "target": "es5",
     "module": "commonjs",
     "lib": ["ES2021", "es7", "es6", "dom"],
+    "rootDir": "src",
     "declaration": true,
     "outDir": "./lib",
     "strict": true,
